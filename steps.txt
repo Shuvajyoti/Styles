@@ -1,0 +1,37 @@
+ng new my-app
+ng generate component heroes
+Copy Style Sheets - styles.css and app.component.css
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+We will create new Component : 
+ng generate component hero-detail
+
+<div *ngIf="hero">
+    <h2>Hero Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <p>{{hero.name}}</p>
+    </div>
+</div>
+
+Copy Hero detail component css
+
+Copy stuff into routing file
+
+<nav>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/about">About Us</a>
+</nav>
+
+ng generate component about
+
+Generate Service
+ng generate service hero
+import { Hero } from './hero';
+import { HEROES } from './mock-heroes';
